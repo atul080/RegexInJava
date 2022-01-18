@@ -4,18 +4,18 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Regex {
-    public static Pattern p= Pattern.compile("^[0-9]{2}\\s[0-9]{10}$");
+    public static Pattern p= Pattern.compile("[a-zA-Z]{8,}");
     public static void main(String[] ar)
     {
         while(true) {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Enter the valid phone number.");
-            String input = sc.nextLine();
+            System.out.println("Enter the valid password.");
+            String input = sc.next();
             boolean check = p.matcher(input).matches();
             if (check)
-                System.out.println("Phone Number is valid.");
+                System.out.println("Password is valid.");
             else
-                System.out.println("Invalid Phone Number.");
+                System.out.println("Invalid Password.");
         }
     }
 }
