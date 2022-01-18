@@ -9,13 +9,13 @@ public class Regex {
     {
         while(true) {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Enter the valid first name.");
+            System.out.println("Enter the valid last name.");
             String input = sc.next();
             boolean check = p.matcher(input).matches();
             if (check)
-                System.out.println("First Name is valid.");
+                System.out.println("Last Name is valid.");
             else
-                System.out.println("Invalid First Name");
+                System.out.println("Invalid Last Name");
         }
     }
 }
