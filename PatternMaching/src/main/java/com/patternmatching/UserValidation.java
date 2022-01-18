@@ -14,10 +14,14 @@ public class UserValidation {
     * @param STRING
     * @return BOOLEAN
     * */
-    public boolean checkFirstName(String firstName) {
+    public boolean checkFirstName(String firstName) throws UserValidationException{
+
         Pattern p= Pattern.compile("[A-Z]{1}[a-z]{2,}");
         boolean check = p.matcher(firstName).matches();
-        return check;
+        if(check)
+            return check;
+        else
+            throw new UserValidationException("Invalid First Name.");
     }
     /*
      * Method to validate Last name.
@@ -25,10 +29,13 @@ public class UserValidation {
      * @param STRING
      * @return BOOLEAN
      * */
-    public boolean checkLastName(String lastName) {
+    public boolean checkLastName(String lastName) throws UserValidationException{
         Pattern p= Pattern.compile("[A-Z]{1}[a-z]{2,}");
         boolean check = p.matcher(lastName).matches();
-        return check;
+        if(check)
+            return check;
+        else
+            throw new UserValidationException("Invalid Last Name.");
     }
     /*
      * Method to validate phone number.
@@ -36,10 +43,13 @@ public class UserValidation {
      * @param STRING
      * @return BOOLEAN
      * */
-    public boolean checkPhoneNumber(String phnNum) {
+    public boolean checkPhoneNumber(String phnNum) throws UserValidationException{
         Pattern p= Pattern.compile("^[0-9]{2}\\s[0-9]{10}$");
         boolean check = p.matcher(phnNum).matches();
-        return check;
+        if(check)
+            return check;
+        else
+            throw new UserValidationException("Invalid Phone Number.");
     }
     /*
      * Method to validate email id.
@@ -47,10 +57,13 @@ public class UserValidation {
      * @param STRING
      * @return BOOLEAN
      * */
-    public boolean checkEmail(String email) {
+    public boolean checkEmail(String email) throws UserValidationException{
         Pattern p= Pattern.compile("([a-z]|[a-z+-.a-z0-9])+((@[^-]+[a-z+.a-z+.a-z])|(@[^-][a-z+.a-z]))");
         boolean check = p.matcher(email).matches();
-        return check;
+        if(check)
+            return check;
+        else
+            throw new UserValidationException("Invalid Email id.");
     }
     /*
      * Method to validate password
@@ -58,9 +71,12 @@ public class UserValidation {
      * @param STRING
      * @return BOOLEAN
      * */
-    public boolean checkPassword(String pswd) {
+    public boolean checkPassword(String pswd) throws UserValidationException{
         Pattern p= Pattern.compile("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*[#$@!%&*?])[A-Za-z\\d#$@!%&*?]{8,}");
         boolean check = p.matcher(pswd).matches();
-        return check;
+        if(check)
+            return check;
+        else
+            throw new UserValidationException("Invalid Password.");
     }
 }

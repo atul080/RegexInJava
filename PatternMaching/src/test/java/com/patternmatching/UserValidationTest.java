@@ -12,7 +12,7 @@ public class UserValidationTest {
     * @calls checkFirstName method of UserValidation class
     * */
     @Test
-    public void fitstName_ifProper_shouldReturnTrue()
+    public void fitstName_ifProper_shouldReturnTrue() throws UserValidationException
     {
         boolean check=uv.checkFirstName("Rahul");
         Assertions.assertTrue(check);
@@ -22,7 +22,7 @@ public class UserValidationTest {
      * @calls checkFirstName method of UserValidation class
      * */
     @Test
-    public void fitstName_ifNotProper_shouldReturnFalse()
+    public void fitstName_ifNotProper_shouldReturnFalse() throws UserValidationException
     {
         boolean check=uv.checkFirstName("rahul");
         Assertions.assertFalse(check);
@@ -32,7 +32,7 @@ public class UserValidationTest {
      * @calls checkLastName method of UserValidation class
      * */
     @Test
-    public void lastName_ifProper_shouldReturnTrue()
+    public void lastName_ifProper_shouldReturnTrue() throws UserValidationException
     {
         boolean check=uv.checkLastName("Kumar");
         Assertions.assertTrue(check);
@@ -42,7 +42,7 @@ public class UserValidationTest {
      * @calls checkPhoneNumber method of UserValidation class
      * */
     @Test
-    public void phoneNumber_ifProper_shouldReturnTrue()
+    public void phoneNumber_ifProper_shouldReturnTrue() throws UserValidationException
     {
         boolean check=uv.checkPhoneNumber("91 1235845678");
         Assertions.assertTrue(check);
@@ -52,7 +52,7 @@ public class UserValidationTest {
      * @calls checkPhoneNumber method of UserValidation class
      * */
     @Test
-    public void phoneNumber_ifNotProper_shouldReturnFalse()
+    public void phoneNumber_ifNotProper_shouldReturnFalse() throws UserValidationException
     {
         boolean check=uv.checkPhoneNumber("911235845678");
         Assertions.assertFalse(check);
@@ -62,7 +62,7 @@ public class UserValidationTest {
      * @calls checkEmail method of UserValidation class
      * */
     @Test
-    public void email_ifProper_shouldReturnTrue()
+    public void email_ifProper_shouldReturnTrue() throws UserValidationException
     {
         boolean check=uv.checkEmail("abc+100@gmail.com");
         Assertions.assertTrue(check);
@@ -72,7 +72,7 @@ public class UserValidationTest {
      * @calls checkEmail method of UserValidation class
      * */
     @Test
-    public void email_ifNotProper_shouldReturnFalse()
+    public void email_ifNotProper_shouldReturnFalse() throws UserValidationException
     {
         boolean check=uv.checkEmail("abc+100gmail.com");
         Assertions.assertFalse(check);
@@ -82,7 +82,7 @@ public class UserValidationTest {
      * @calls checkPassword method of UserValidation class
      * */
     @Test
-    public void password_ifProper_shouldReturnTrue()
+    public void password_ifProper_shouldReturnTrue() throws UserValidationException
     {
         boolean check=uv.checkPassword("Abc6@ghjkloui");
         Assertions.assertTrue(check);
@@ -92,10 +92,9 @@ public class UserValidationTest {
      * @calls checkPassword method of UserValidation class
      * */
     @Test
-    public void password_ifNotProper_shouldReturnFalse()
+    public void password_ifNotProper_shouldReturnFalse() throws UserValidationException
     {
         boolean check=uv.checkPassword("abc@ghjkloui");
         Assertions.assertFalse(check);
     }
-
 }
