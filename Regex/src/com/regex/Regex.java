@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Regex {
-    public static Pattern p= Pattern.compile("[a-zA-Z]{8,}");
+    public static Pattern p= Pattern.compile("(?=.*?[A-Z])(?=.*?[a-z])[A-Za-z]{8,}");
     public static void main(String[] ar)
     {
         while(true) {
